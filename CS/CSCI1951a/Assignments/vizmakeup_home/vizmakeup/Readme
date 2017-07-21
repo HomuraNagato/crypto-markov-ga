@@ -1,0 +1,7 @@
+Readme
+
+The hardest part of the assignment was fitting the data into a usable form. To prevent getting too hung up on it, I made a small dataset that I could use with the intention of building the graphs first, then cleaning the data to fit what worked for me. I was unable to properly clean the data using code, and so ended up doing a fair bit of it by hand, with a number of errors. Running clean_data.py created a file of user names. Then count_names.py counted the number of times each name appeared. Finally stacked_data output a mostly usuable form of required data to form the stacked bar chart.
+
+I was able to formed a stacked bar chart by year and tag and a scatterplot by month and number of publications. Limitations of both are primarily missing and inaccurate data due to improper cleaning of data. Limitations of the stacked bar chart are, being unable to solve were how to color the bars based on multiple tags (tried to use different colors to signify this), hoverbars that are too large, an apparent duplication of some tags, and not loading a scatterplot based on selected year. Limitations of the scatterplot are: only showing for the year 2016 (since not able to count number of publications based on year selected), and year, month, day, and tag based on most recent publication. 
+
+Assistance on building stacked bar chart from https://bl.ocks.org/mbostock/3886208 and http://bl.ocks.org/juan-cb/43f10523858abf6053ae. Also used http://bl.ocks.org/Caged/6476579 to build the tooltips.

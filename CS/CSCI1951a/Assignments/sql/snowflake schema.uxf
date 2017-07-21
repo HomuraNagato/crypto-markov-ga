@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>16</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1136</x>
+      <y>496</y>
+      <w>336</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>Furniture Properties
+--
+__Furniture ID__
+__Box ID__
+__Bed D__
+__Shelf ID__
+-Name
+-Description
+-Height
+-Width
+-Length
+-Weight
+-Material
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>992</y>
+      <w>336</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>Customer Properties
+--
+__Customer ID__
+__Address ID__
+-Name
+-Birthday
+-Loyalty Program Member
+-Loyalty Program points
+-Loyalty Program start date</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1552</x>
+      <y>880</y>
+      <w>256</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>Shelves
+--
+__Shelf ID__
+Num Shelves</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>0</y>
+      <w>336</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>Date Properties
+--
+__Date ID__
+-Year
+-Month
+-Day
+-Quarter
+-Day-of-week
+-Hour</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>496</y>
+      <w>336</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>IKEA stores
+--
+__Date ID__
+__Purchase ID__
+__Customer ID__
+__Furniture ID__</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>1472</y>
+      <w>336</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>Address Properties
+--
+__Address ID__
+-Country
+-State
+-City</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>896</x>
+      <y>624</y>
+      <w>272</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1296</x>
+      <y>400</y>
+      <w>48</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1456</x>
+      <y>464</y>
+      <w>128</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1456</x>
+      <y>784</y>
+      <w>128</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1632</x>
+      <y>256</y>
+      <w>112</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1456</x>
+      <y>688</y>
+      <w>496</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>290.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1792</x>
+      <y>160</y>
+      <w>144</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1136</x>
+      <y>112</y>
+      <w>336</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>Assembly Box
+--
+__Box ID__
+-Height
+-Width
+-Length</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1552</x>
+      <y>368</y>
+      <w>192</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>Bed
+--
+__Bed ID__
+__Couch ID__
+-Bed Size</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1584</x>
+      <y>64</y>
+      <w>224</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>Couch
+--
+__Couch ID__
+__Table ID__
+-Legs
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1920</x>
+      <y>704</y>
+      <w>192</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>Chair
+--
+__Chiar ID__
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>1280</y>
+      <w>48</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>496</y>
+      <w>336</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>Purchase Properties
+--
+
+__Purchase ID__
+-Amount of Product
+-Price of Product</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>624</y>
+      <w>288</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>784</y>
+      <w>48</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>736</x>
+      <y>288</y>
+      <w>48</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2160</x>
+      <y>208</y>
+      <w>320</w>
+      <h>256</h>
+    </coordinates>
+    <panel_attributes>Table drawers
+--
+__Drawer ID__
+-Drawers
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1904</x>
+      <y>64</y>
+      <w>224</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>Table
+--
+__Table ID__
+__Drawer ID__
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2112</x>
+      <y>160</y>
+      <w>240</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1888</x>
+      <y>992</y>
+      <w>256</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>Armoires
+--
+__Armoire ID__
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1792</x>
+      <y>960</y>
+      <w>128</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

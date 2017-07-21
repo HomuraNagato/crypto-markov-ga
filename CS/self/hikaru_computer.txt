@@ -1,0 +1,31 @@
+Anki
+Bitvise ?
+hakuneko (download manga)
+Keeper
+Nmap ?
+Opera
+PlayStation Now
+Bitdefender
+Calibre2
+Guild Wars 2
+Microsoft Office 15
+MikTex 2.9 (for knitting RStudio)
+R
+Rstudio
+Wunderlist
+Nook
+Line
+Instagram
+VLC media player
+discord
+
+Anaconda3
+
+Documents
+  Anki
+  Important
+  Other
+  # R win-library
+Music
+Pictures
+Videos

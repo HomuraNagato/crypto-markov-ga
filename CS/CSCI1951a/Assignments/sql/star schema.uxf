@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>16</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1136</x>
+      <y>512</y>
+      <w>336</w>
+      <h>496</h>
+    </coordinates>
+    <panel_attributes>Furniture Properties
+--
+__Furniture ID__
+-Name
+-Description
+-Height
+-Width
+-Length
+-Weight
+-Material
+-assembly-box-height
+-assembly-box-width
+-assembly-box-length
+-legs
+-bed size
+-num shelves
+-drawers</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>976</y>
+      <w>336</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>Customer Properties
+--
+__Customer ID__
+-Name
+-Birthday
+-Loyalty Program Member
+-Loyalty Program points
+-Loyalty Program start date
+-Country
+-State
+-City</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>16</y>
+      <w>336</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>Date Properties
+--
+__Date ID__
+-Year
+-Month
+-Day
+-Quarter
+-Day-of-week
+-Hour</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>512</y>
+      <w>336</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>IKEA store
+--
+__Date ID__
+__Purchase ID__
+__Customer ID__
+__Furniture ID__</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>896</x>
+      <y>640</y>
+      <w>272</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>512</y>
+      <w>336</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>Purchase Properties
+--
+__Purchase ID__
+-Amount of Product
+-Price of Product</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>640</y>
+      <w>288</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>800</y>
+      <w>48</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>304</y>
+      <w>48</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+</diagram>

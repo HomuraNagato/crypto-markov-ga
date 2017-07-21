@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- Run with 'php -S localhost:8000'
+    then visit chrome and enter 'localhost:8000'
+
+    Idea for visualization: To make a graph of the number of views of each category by age_range. If an age_range has any outliers, then BootLoader can target those users with projects in that category. If age_range doesn't show any difference, can also look at other variables like gender or maritial status.
+
+    to graph the number of views of each category by age_range, gender, or maritial status. If there are any outliers, can then target those users with projects in that category.
+
+   -->
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>VizMakeUp</title>
+  <meta charset="utf-8">
+  <meta name="description" content="VizMakeup">
+  <meta name="author" content="Matt McAvoy">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  
+
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script><style    type="text/css"></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> <!-- JQUERY -->
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
+  <!--# CSS and viz.js #}-->
+    <link rel="stylesheet" href="style.css"></link>    
+  
+ </head>
+
+ <body>
+
+    <svg class="chart"></svg>
+    
+    <p>Stacked bar chart showing publications by year. Color coded by tag, with hoverbars including more information.</p>
+    
+    <svg class="chart-scatter"></svg>
+    
+    <p>Scatterplot showing authors number of publications with Tim as of the end of 2015; dates and tag based on most recent publication. Color coded by tag, with hoverbars including more information. Higher on plot indicates more publications.</p>
+    
+
+
+ </body>
+ 
+ 
+   <!-- <script src="barchart.js" defer></script> 
+    <script src="circle.js" defer></script> -->
+    <script src="viz.js" defer></script> 
+    <script src="viz-scatter.js" defer></script>
+
+
+
+ </html>

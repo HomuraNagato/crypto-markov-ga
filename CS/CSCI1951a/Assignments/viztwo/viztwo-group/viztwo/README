@@ -1,0 +1,101 @@
+README - Visualization 2
+
+### How to Run ###
+1.  From the topmost directory (viztwo), run "python -m SimpleHTTPServer 8888 &"
+2.  Open localhost:8888 in a browser (preferable Google Chrome) and choose html
+
+
+### Group Members ###
+ekasbohm
+ehw
+napicard
+mmcavoy
+
+
+### File Guide ###
+
+	## Common Files & Folders ##
+	./README			This document
+	./code				Python programs
+	./data 				Files providing data for our visualizations
+	./data/data.json 	Provided JSON data from BootLoader
+	./html				HTML, CSS, and JavaScript files
+	./html/img			Screenshots of our visualizations
+	./html/index.html 	Page with screenshots of and links to our visualizations
+	./html/style.css 	CSS styling for index.html
+
+
+	## ekasbohm's Files ##
+	./code/ek_narrow_data.py   Extracts states and donations from data.json
+	./data/state_donations.csv CSV file of states and amount donated
+	./data/states.json 		   JSON file of state boundary information
+	./data/us-state-names.tsv  File listing state names, IDS, and abbreviations	
+	./html/ek-index.html 	   Interactive States + Donations visualization
+	./html/ek-style.css 	   CSS styling for States + Donations webpage
+	./html/img/ek-viz.png 	   Screenshot of the States/Donations visualization
+	./html/state_donations.js  JavaScript file for the Donation map of the USA 
+
+
+	## mmcavoy's Files ##
+	./code/narrow_category.py     Extracts ages & categories for northeast users
+	./data/age_NE_18-24.csv       CSV of northeastearn age 18-24 with categories
+	./data/age_NE_25-34.csv       CSV of northeastearn age 25-34 with categories	
+	./data/age_NE_35-44.csv       CSV of northeastearn age 35-44 with categories
+	./data/age_NE_45-54.csv       CSV of northeastearn age 45-54 with categories
+	./data/age_NE_55+.csv 	      CSV of northeastearn age 55+ with categories
+	./html/category_popularity.js Visualization code for category distribution
+	./html/img/mm-viz.png 		  Preview of Category Popularity visualization
+	./html/mm-index.html 		  Interactive Category Popularity visualization
+	./html/mm-style.css 		  CSS styling for Category popularity webpage
+
+
+	## ehw's Files ##
+	./code/ew-learn.py 		Extracts categories and age groups of single males
+	./data/categoryToAgeToFrequency.csv 	CSV of categories vs. age groups
+	./html/ew-index.html 	Webpage for interactive category visualization
+	./html/img/ew-viz.png 	Screenshot of category distributions by age 
+
+
+	## napicard's Files ##
+	./code/explore.js 		Visualization code for two variables
+	./code/learn.py 		Machine learning code that groups by session id
+	./code/util.py 			Prints informative features about data
+	./data/users.json 		Printout of events grouped by session_id
+	./html/img/np-viz.png 	Screenshot of the adaptive visualization
+	./html/np-index.html 	Webpage with adaptive visualization of two variables
+	./html/np-style.css 	CSS styling for Adaptive Visualization webpage
+
+### ekasbohm's README ###
+
+I think my visualization went pretty well!  As far as I can tell, 
+there aren't any bugs in the way each states' donations are portrayed.
+
+I used Python (ek_narrow_data.py) to generate a CSV file (state_donations.csv) 
+that had just the state abbreviations and their total donations from the 
+original JSON file.
+
+I also created separate CSS and JavaScript files so that index.html could be 
+kept pretty clean.
+
+I didn't collaborate with anyone in the class on this project, 
+but I did make use of the following online resources:
+
+	## Data ##
+	- United States topojson data from mbostock (saved as states.json in the 
+	  data subdirectory) helped me figure out borders for each state:
+		https://github.com/mbostock/topojson/blob/master/examples/us-10m.json
+
+	- mbostock's TSV file that matches state names and abbreviations with the 
+	  ids used in the topojson file (saved as us-state-names.tsv in the data 
+	  subdirectory):
+	  	https://gist.github.com/mbostock/4090846#file-us-state-names-tsv
+
+	## D3 ##
+	- The Heatmap resource from Viz 1 (http://bl.ocks.org/tjdecke/5558084) was
+	  useful for figuring out legends and map coloring.
+
+	- Mike Bostock also created a useful tutorial for making a map:
+		https://bost.ocks.org/mike/map/
+
+	- Options for map coloring were outlined here: 
+		https://bl.ocks.org/mbostock/5577023

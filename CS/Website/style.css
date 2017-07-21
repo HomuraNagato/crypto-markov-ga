@@ -1,0 +1,195 @@
+
+body {
+	margin:0px;
+	padding:0px;
+	font-family: Sans-Serif;
+	line-height: 1.5em;
+	/* Background settings create a parallax scrolling effect */
+	background-image: url("images/madoka_hug.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+}
+
+/* colors
+pinks: violet, #d22da9, 
+greens: #4CAF50
+greys: #333 (shorthand for #333333)
+blues: #1d439b 
+tans: blanchedalmond;
+*/
+
+#header {
+
+}
+			
+#header h1 {
+	margin: 0px;
+	padding: 20px;
+	text-align: center;
+}
+
+.background_color {
+	background: rgba(51,0,51,0); /* add background color to header and footer */
+}
+
+#footer {
+	width: 100%;
+	color: #4CAF50;
+	text-align: center;
+	padding: 10px;
+}
+
+#top h1 {
+	text-align: center;
+	padding: 10px;
+}
+
+.content, #top p {
+	background: rgba(51,51,51,.9);
+	color: white;
+	padding: 0;
+	text-indent: 4em;
+	margin-left: 10%;
+	margin-right: 10%;
+	height: auto;
+}
+
+
+
+ol, ol li {
+	text-indent: 0em;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+
+/* .bar creates menu bar*/
+.bar {
+	text-align: left; /* center for centering on page */
+	background: rgba(0,0,0,0);  /* with transparancy, overlapping header darkens the menu bar */
+}
+
+.bar ul {
+    list-style-type: none;
+    overflow: hidden;  /* necessary? */
+    height: 60px;
+
+}
+
+.bar li {
+    display: inline-block;  /* Switched from float: left to inline-block so that it fits in the center of the screen; */
+}
+
+
+.bar li:first-child {
+    border-right: none;
+}
+
+.bar li a {
+    display: block;
+    color: #d22da9; 
+    text-align: center;
+    padding: 14px 36px;  /* Spaces menu bar text */
+    text-decoration: none;
+}
+
+
+.bar li #onpage {
+	font-weight: bold;
+	  /* three borders bottoms, might want to reduce to one class */
+}
+
+/* Change the link color to #111 (black) on hover */
+.bar li a:hover {
+	color: violet;
+    border-bottom: 10px solid #d22da9;
+    transition-duration: .65s;  /* slows appearance of bottom bar */
+}
+
+
+.bottom_bar { 
+	border-bottom: 10px solid #d22da9;
+ }
+
+.bar .active {  /* colors home and about menus  */
+    
+}
+
+
+.banner-img {
+
+	height: 500px;  /* Might want 1280 x 720 */ 
+	width: 900px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;  /* Centers the image */
+}
+
+.banner-img img {
+
+	width: 100%;  /* Fits the image to the banner */
+	height: 100%;
+}
+
+#mainplayer {
+	height: 560px; /*Small - 360 by 600 */
+	width: 900px;  /*Large - 560 by 900 */
+	display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+canvas {
+	width: auto;
+	height: 900px;
+}
+
+.animeMenu {
+	margin-left: 10%;
+	margin-right: 5%;
+}
+
+.animeMenu ul li {
+	display: inline-block;
+	padding: 1em;
+}
+.animeMenu .imgWrap p {
+	padding: 1em;
+	text-align: center;
+}
+
+.imgWrap {
+  position: relative;
+  height: 200px;
+  width: 200px;
+}
+
+.animeMenu .imgWrap img {
+	height: 200px;
+	width: 200px;
+}
+
+.imgDescription {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /*background: rgba(29, 106, 154, 0.72);*/
+  background: rgba(51,0,51,.75);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+
+  /*remove comment if you want a gradual transition between states
+  -webkit-transition: visibility opacity 0.2s;*/
+}
+
+.imgWrap:hover .imgDescription {
+  visibility: visible;
+  opacity: 1;
+  transition-duration: .5s;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- Run with 'php -S localhost:8000'
+    then visit chrome and enter 'localhost:8000'
+
+    Idea for visualization: To make a graph of the number of views of each category by age_range. If an age_range has any outliers, then BootLoader can target those users with projects in that category. If age_range doesn't show any difference, can also look at other variables like gender or maritial status.
+
+    to graph the number of views of each category by age_range, gender, or maritial status. If there are any outliers, can then target those users with projects in that category.
+
+   -->
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>VizTwo</title>
+  <meta charset="utf-8">
+  <meta name="description" content="VizTwo">
+  <meta name="author" content="Matt McAvoy">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  
+
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script><style    type="text/css"></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> <!-- JQUERY -->
+          <script src="category_popularity.js" defer></script> 
+
+
+  <!--# CSS #}-->
+  <link rel="stylesheet" href="mm-style.css">
+
+ </head>
+
+ <body>
+    <div id="categories">
+    </div>
+
+    <div id="dataset-picker"></div>
+
+    <p>This bar chart shows the number of events in Bootloader for each category (Environment, Games, Fashion, Technology, and Sports) filtered on age and living in the Northeast. Additionally to reduce frequent posters and look at each user individually, once a user was counted in a category, they couldn't count again for that category. To do this, the program narrow_category.py was used to format the data in a usable form and output as a csv file. Then category_popularity.js took these csv files to make a bar chart. Also, buttons were added to switch between the age groups. Based on these filters, one can see younger people are least interested in fashion and most interested in sports, sports remain consistently popular up until age 54, people aged 45-54 have more varied interested than other age groups, and people over 55 are the opposite of 18-24 people in being least interested in sports and most interested in fashion.</p>
+    
+
+
+ </body>
+ </html>

@@ -1,0 +1,17 @@
+discussion.txt
+
+
+The Snowflake schema contains types that may contain subtypes that are unique. The Star schema contains types that may have a few redundant properties. The strength of using the snowflake schema is being better able to look at similar but different types. The strength of using the star schema is being better able to look at larger differences in the data. For example, the snowflake schema would be able to look at the difference between beds and couches, where in the star schema, one would have to select for Bed_size without Legs to get beds.
+
+Questions
+1. Snowflake schema find the average weight of all furniture by selecting for Weight of furniture then averaging it. Same in Star Schema.
+
+2. To find average of drawers tables have,  select for drawers and then average in both snowflake and star schema.
+
+3. To find most common Bed Size, query for Bed size then find the mode in both.
+
+4. To find number of tables in 2015, select for 2015 and Legs, filter out Couch table and then look at amount of product in snowflajke; in star select for legs and filter out name=Couch, then look at amount of product.
+
+5. Select for Day of week=Friday then look at amount of product sold in both.
+
+SELECT s.name, s.grade FROM Likes l LEFT JOIN Student s on s.ID=l.ID2 WHERE l.grade > (SELECT s.grade FROM Likes ll LEFT JOIN Student ss on ss.ID=ll.ID1 WHERE ll.ID1=l.ID1) ORDER BY name, grade ASC;

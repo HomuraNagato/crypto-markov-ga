@@ -1,0 +1,55 @@
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+/*.chart rect {
+  fill: steelblue;
+}
+*/
+
+
+.chart {
+	margin: 10px;
+	background-color: white;
+	padding: 5px;
+	fill: green;
+}
+
+
+.chart rect {
+  font: 10px sans-serif;
+  text-align: right;
+  padding: 5px;
+  margin: 10px;
+  color: white;
+  fill: url(#MyGradient);
+}
+
+
+.chart line {
+	stroke: orange;
+	stroke-width: 3.5px;
+}
+
+.chart2 div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: purple;
+}
+.chart2 text {
+  fill: red;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.chart2 line {
+  fill: purple;
+  stroke: #000;
+  stroke-width: 1.5px;
+}

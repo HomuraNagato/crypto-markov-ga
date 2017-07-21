@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Viz1</title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content=""> <!-- Your name here -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--# CSS #}-->
+	<link rel="stylesheet" href="css/style.css"> <!-- Add your CSS to this file -->
+
+	<!--# JAVASCRIPT #}-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> <!-- JQUERY -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script> <!-- D3.js -->
+	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script> <!--Used d3.tip for tooltips --> 
+
+</head>
+
+<body>
+
+	<p><h2> CS1951a Visualization I </h2></p>
+	
+	<h3>Part I: Crime Quantity Time Map</h3>
+	<h4>Description of Part I</h4>
+	<p>Crime_times.py is a python script used to read in the data from the csv file and output a csv that can then be used to generate the heat map. To read in the data, I create a python datetime object from the second item in each line of the csv. Using this object, I sum up the total number of crimes on the corresponding day and make this number the value of the corresponding (weekday, hour) tuple. </p>
+	<p>Once the cleaned csv file has been generated, the code in crime_times.js was edited from the original. I changed it so that only one file was used to generate the visualization, not an array of files. The x and y values of the labels also needed to be adjusted. I also changed the color scheme just for fun. For some reason, when I created another div for Part II of this assignment, the legend was no longer visible even though the elements of the legend were still generated. I fixed this by moving the legend down 20 pixels. </p> 
+
+	<p>Lastly, I was having an issue with accessing data.tsv from crime_times.js. This was fixed by moving the data folder into the js folder directly.</p>
+	<div id="chart">
+		<script src="js/crime_times_great.js"></script> 
+	</div>
+	
+
+	<h3>Part II: Marey's Trains</h3>
+	<h4>Description of Part II</h4>
+	<p> <strong>Creating the graph:</strong> For Part II, I needed to find where on the y axis a city should be placed by keeping track of the distance from the previous city. I did this by reading in the information from city_distances.csv and mapping the value of "city2" with the distance. This was purposedful, as it meant that the first value in the column city1 would have a relative y value of 0. Then I also mapped the cities to their actual y values, which is the y value of the previous city + the distance read from the csv file. Using these y values, I created the text elements for each of the cities. I also appended a d3.line to each of the text labels on both axises to represent the graph "ticks".
+
+	<p> <strong>Getting the data: </strong>
+		It was difficult to use the data from hyperloop.csv in its original form to draw the lines. This was because of the undefined values in many of the rows and that trains went in different directions and began/ended their paths at different places. To reconcile this, I created an additional csv file using a python script (which is in the python folder, sort.py). This script can be run from the python folder using "python sort.py ../js/data/hyperloop.csv ../js/data/sorted.csv", and it generates a csv file to the data folder. The format of this csv is as follows: 
+			"train name, departure 1 | Station of departure 1, arrival 1 | Station of arrival 1, departure 2 | Station of departure 2," etc.
+		I parsed each line of the csv file to create an object that represents all important information for each segment of a train's path, including the path color, train name, and x and y coordinates of the line. 
+		The most important data structure besides this is file is train_info, which is the array that stores these objects. I used an array because they were easiest to bind to when creating d3 elements, as they're iterable.
+
+	</p>
+	<p> <strong>Drawing the train paths: </strong>
+		Once I had my list of objects with all necessary train info, it was easy to draw the paths. I created a g for each train, and then created a line for each item in each train's schedule. I used d3.line to draw each path segment, setting the x and y coordinates according to the corresponding attributes of each object. I also set the class of each line segment to be the name of the train so that I knew which items to select for hovering.
+	</p>
+
+	<p> <strong>Implementing hovering features: </strong>
+		I used d3.tip for the tooltips, which required me to import the script on "http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js" into this html file. I simply attached a "mouseenter" and "mouseout" events to each path segment to display the corresponding tool tip and changing the stroke width.
+	</p>
+	<div id="trains">
+		<script src="js/train_times_great.js"></script>  
+	</div>
+
+
+</body>
+
+</html>
