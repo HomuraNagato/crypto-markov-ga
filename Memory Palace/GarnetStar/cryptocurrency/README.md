@@ -19,3 +19,9 @@ Data downloaded from blockchain.info
 Methods used.
 
 Single difference on price. ARMA with each parameter.
+Ordinary Least Squares
+Principal Component Analysis
+Generalized Method of Moments
+k-nearest neighbors
+Random forest
+Manifold Learning
