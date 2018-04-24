@@ -6,6 +6,7 @@
 
 library(tidyverse)
 
+setwd("C:/Users/homur/OneDrive/Memory\ Palace/GarnetStar/cryptocurrency")
 S2 <- read.csv("S2.csv")
 # ggplot(S2, aes(x_, market_price)) + geom_point()
 
@@ -19,12 +20,17 @@ bind_1 <- cbind(date_2, returns)
 names(bind_1) <- c("x", "y")
 ggplot(bind_1, aes(x,y)) + geom_point()
 
+# tidyverse way
+S2 <- S2 %>% mutate(returns = (market_price - lag(market_price))/lag(market_price))
+ggplot(data=S2, aes(x=x_,y=returns)) + geom_point()
+
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #                                       try exchange rate factor analysis
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # data from: https://spreadstreet.io
 
-# btc_usd <- read.csv("Bitcoin Markets (localbtcUSD).csv") # actually lets not include usd, as pca should be unsupervised learning rt?
+setwd("C:/Users/homur/OneDrive/Memory\ Palace/GarnetStar/cryptocurrency/btc\ data/")
+btc_usd <- read.csv("Bitcoin Markets (localbtcUSD).csv") # actually lets not include usd, as pca should be unsupervised learning rt?
 btc_cad <- read.csv("Bitcoin Markets (localbtcCAD).csv")
 btc_sgd <- read.csv("Bitcoin Markets (localbtcSGD).csv")
 btc_hkd <- read.csv("Bitcoin Markets (localbtcHKD).csv")
@@ -64,16 +70,30 @@ df2 <- cbind(btc_cad[1:m,"Weighted.Price"], btc_sgd[1:m,"Weighted.Price"],
              btc_jpy[1:m,"Weighted.Price"], btc_krw[1:m,"Weighted.Price"],
              btc_gbp[1:m,"Weighted.Price"], btc_eur[1:m,"Weighted.Price"]) # full 22 exchange rates
 # df3 <- ldply(c("btc_usd", "btc_aud")) .. is there an easier way to do above line?
+
+# There is perhaps an R way to iterate and add files to a dataframe. There definitely is using python
+
+df2.stored <- as.data.frame(df2)
 df2[df2 == 0] <- NA # set 0's to NA (therwise when take logs will be infinity)
 df3 <- na.omit(df2) # remove rows with missing data
 df4 <- log(df3) # take logs to map data to clearer values
 m <- dim(df4)[1] # end with 235 values
 
+# tidyverse way
+# previous solution is more readable. Only provided to show additional ways to use tidyr
+df4.tidyr <- df2.stored %>% mutate_at(vars(contains("V")), funs(replace(., . == 0, NA))) %>% 
+			drop_na() %>% mutate_if(., is.numeric, log))
+m.tidyr <- dim(df4.tidyr)[1]
+paste("df4 and df4.tidyr have", m, m.tidyr, "rows respectfully, thus equivalent functions", sep=" ")
+
 means = t(as.matrix(apply(df4,2,mean)))
 X <- as.matrix(df4 - kronecker(matrix(1,m,1),means))
 
+# tidyverse doesn't do well with matricies, alternatives not clear.
+
 f <- factanal(X,factors = 3, rotation = "varimax", lower = 0.01) # try 3 factors at first
 f_hat1 = X%*%f[["loadings"]]/3 # im not why equation this way, just saw some code that used this
+# I think %*% is matrix multiplication of X (235 x 21) and f (21 x 3) = (235 x 3)
 time <- 1:m # for plotting
 df_time <- as.tibble(cbind(time, f_hat1))
 
