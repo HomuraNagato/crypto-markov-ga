@@ -19,24 +19,24 @@ Data downloaded from blockchain.info
 * number_transactions
 
 
-Methods used. (* = chosen)
+Methods used. (+ = of interest; ++ = chosen)
 
-Single difference on price. ARMA with each parameter
+[ ] Single difference on price. ARMA with each parameter
 
-Ordinary Least Squares
+[ ] Ordinary Least Squares
 
-Principal Component Analysis / Factor Analysis
+[ ] Principal Component Analysis / Factor Analysis
 
-Generalized Method of Moments
+[ ] Generalized Method of Moments
 
-k-nearest neighbors
+[ ] k-nearest neighbors
 
-Random forest
+[ ] Random forest
 
-Manifold Learning
+[ ] Manifold Learning
 
-Machine Learning
+[ ] Machine Learning
 
-Evolutionary Algorithms
+[ ] Evolutionary Algorithms 
 
-Neural Network Modeling
+[ ] Neural Network Modeling
