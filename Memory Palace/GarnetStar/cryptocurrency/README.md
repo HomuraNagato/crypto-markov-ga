@@ -37,6 +37,6 @@ Methods used. (+ = of interest; ++ = chosen)
 
 [ ] Machine Learning
 
-[ ] Evolutionary Algorithms 
+[ ] Evolutionary Genetic Algorithms 
 
 [ ] Neural Network Modeling
