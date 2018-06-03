@@ -6,6 +6,9 @@ Objective - Identify parameters that can predict cryptocurrency price. Cryptocur
 
 Hypothesis - There are parameters that influence the price of bitcoin.
 
+Journal - Computational Economics: 
+https://link.springer.com/journal/10614
+
 ## EDA
 
 Data downloaded from blockchain.info
@@ -16,15 +19,24 @@ Data downloaded from blockchain.info
 * number_transactions
 
 
-Methods used.
+Methods used. (+ = of interest; ++ = chosen)
 
-Single difference on price. ARMA with each parameter.
-Ordinary Least Squares
-Principal Component Analysis
-Generalized Method of Moments
-k-nearest neighbors
-Random forest
-Manifold Learning
+[ ] Single difference on price. ARMA with each parameter
 
+[ ] Ordinary Least Squares
 
-testing pull request
+[ ] Principal Component Analysis / Factor Analysis
+
+[ ] Generalized Method of Moments
+
+[ ] k-nearest neighbors
+
+[ ] Random forest
+
+[ ] Manifold Learning
+
+[ ] Machine Learning
+
+[ ] Evolutionary Genetic Algorithms 
+
+[ ] Neural Network Modeling
