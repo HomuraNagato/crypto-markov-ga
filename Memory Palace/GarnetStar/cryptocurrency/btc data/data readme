@@ -10,4 +10,7 @@ used the weighted price as the price
 ** update Aug 15th
 see for description of data: https://bitcoin.stackexchange.com/questions/22989/where-can-i-get-all-historical-trades-btc-price-data
 downloaded explictly from: http://api.bitcoincharts.com/v1/csv/
+coinbaseUSD.csv.gz
+coincheckJPY.csv.gz 
+need to unzip to .csv
 data takes several minutes to read into R >.<
