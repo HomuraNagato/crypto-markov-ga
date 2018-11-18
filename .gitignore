@@ -2,3 +2,4 @@
 
 Memory\ Palace/GarnetStar/cryptocurrency/twitter_sentiment/credentials.py
 .DS_Store
+.twitter_keys.yaml
