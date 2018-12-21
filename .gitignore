@@ -1,5 +1,7 @@
 # git ignore following files
 
 Memory\ Palace/GarnetStar/cryptocurrency/twitter_sentiment/credentials.py
+twitter-sentiment/pyqt/
 .DS_Store
+/twitter-sentiment/.DS_Store
 .twitter_keys.yaml
