@@ -10,17 +10,9 @@ Exchange Rate Data: from FRED St. Luis Fed
   1) Differentials in Intererst Rates: 3-Month London Interbank Offered Rate (LIBOR), based on a basket of currencies:
       * :ballot_box_with_check: Japanese Yen (JPY3MTD156N), US Dollar (USD3MTD156N), Euro (EUR3MTD156N), and British Pound (GBP3MTD156N)
       * :ballot_box_with_check: To create differential, we take the mean across these four item, then difference each respective rate against this mean
-lets pass on the rest ... as found better in another paper, "Forecasting cryptocurrencies under model and parameter instability" by Cataniaa, Grassib, and Ravazzolo
-  2) Differentials in Interest rates: Effective Federal Funds Rate (DFF)
-      * Again, need to collect a basket
-  3) Current Account Deficits: I couldn't get a good measure
-  4) Public Debt: Can find daily data at [TreasuryDirect - The Daily History of the Debt Results](https://www.treasurydirect.gov/NP/debt/search?startMonth=12&startDay=01&startYear=2014&endMonth=10&endDay=31&endYear=2018)
-      * Can we scrape this data Matt?
-  5) Terms of Trade: Need current accounts data for this ..
-  6) Political Stability and Economic Performance: Need to find some literature on what measures of this are
 
 Following, "Forecasting cryptocurrencies under model and parameter instability" by Cataniaa, Grassib, and Ravazzolo use:
-  1) Cryptocurrency time series - in first difference of logs
+  2) Cryptocurrency time series - in first difference of logs
       * :ballot_box_with_check: BTC / USD, BTC / JPY, BTC / EUR, BTC / GBP
   2) Additional crypto–explicative time series
       * Log high - log low of each Cryptocurrency, 
