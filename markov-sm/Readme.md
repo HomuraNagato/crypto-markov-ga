@@ -12,6 +12,7 @@ Exchange Rate Data: from FRED St. Luis Fed
       * :ballot_box_with_check: To create differential, we take the mean across these four item, then difference each respective rate against this mean
 
 Following, "Forecasting cryptocurrencies under model and parameter instability" by Cataniaa, Grassib, and Ravazzolo use:
+
   2) Cryptocurrency time series - in first difference of logs
       * :ballot_box_with_check: BTC / USD, BTC / JPY, BTC / EUR, BTC / GBP
   2) Additional crypto–explicative time series
