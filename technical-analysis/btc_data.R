@@ -111,6 +111,12 @@ df <- df %>% mutate(log_p = log(price),
                     percent_change = log_p - log_p_lag)
 is.na(df)<-sapply(df, is.infinite)
 
+## -----------------------------------------------------------------------------------------
+# ------ Other variables
+# Correlation
+correlation_percent <- cor(df[2:365,"percent_change"], df[2:365, "S3_mean"])
+correlation_price <- cor(df[2:365,"price"], df[2:365, "S3_mean"])
+
 ##
 ## -----------------------------------------------------------------------------------------
 # ------ Plot
