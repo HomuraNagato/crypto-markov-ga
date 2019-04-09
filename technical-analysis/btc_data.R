@@ -2,6 +2,8 @@
 # BTC Data Cleaning
 # Mark McAvoy
 # Autumn 2018
+
+# note: function(s) at the bottom
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # Clear enviroment before starting
@@ -38,19 +40,19 @@ btc_usd_day <- btc_usd_day_temp %>% group_by(fdate) %>% slice(c(n())) # take the
 # following for Dec 2014 - Dec 2018
 # btc_usd_day <- btc_usd_day %>% filter(timestamp <= 1541044791)
 # following for 2018 only
-btc_usd_day <- btc_usd_day %>% filter(timestamp <= 1541044791 & timestamp >= 1514869199)
+btc_usd_day <- btc_usd_day %>% filter(timestamp <= 1546318785 & timestamp >= 1514869199)
 # write.csv(btc_usd_day, "btc_usd_day.csv")
 
 # ------ Create daily BTC / JPY data
-names(btc_jpy) <- c("timestamp", "price", "volume")
+# names(btc_jpy) <- c("timestamp", "price", "volume")
 # note to get the following to run I had to use:
 # Sys.setenv('R_MAX_VSIZE'=64000000000)
 # to increase memory size, as well as rm() all other datasets, 
 # to clear space for the following large dataset \(^.^)\
-btc_jpy_day_temp <- btc_jpy %>% mutate(date = anytime(timestamp),
-                                       fdate = factor(format(date, '%Y-%m-%d')))
-
-btc_jpy_day_temp <- btc_jpy_day_temp %>% group_by(fdate) %>% slice(c(n())) # take the last value for the day, as the "closing" day price
+# btc_jpy_day_temp <- btc_jpy %>% mutate(date = anytime(timestamp),
+#                                        fdate = factor(format(date, '%Y-%m-%d')))
+# 
+# btc_jpy_day_temp <- btc_jpy_day_temp %>% group_by(fdate) %>% slice(c(n())) # take the last value for the day, as the "closing" day price
 # 1417418343 is jpy's first time-stamp on 2014-12-01
 # 1541044783 is jpy's last time-stamp on 2018-10-31
 # following for Dec 2014 - Dec 2018
@@ -59,59 +61,76 @@ btc_jpy_day_temp <- btc_jpy_day_temp %>% group_by(fdate) %>% slice(c(n())) # tak
 # write.csv(btc_jpy_day, "btc_jpy_day.csv")
 
 # ------ Create daily BTC / EUR data
-names(btc_eur) <- c("timestamp", "price", "volume")
-btc_eur_day_temp <- btc_eur %>% mutate(date = anytime(timestamp),
-                                       fdate = factor(format(date, '%Y-%m-%d')))
-btc_eur_day_temp <- btc_eur_day_temp %>% group_by(fdate) %>% slice(c(n())) 
-
-# ------ Create daily BTC / GBP data
-names(btc_gbp) <- c("timestamp", "price", "volume")
-btc_gbp_day_temp <- btc_gbp %>% mutate(date = anytime(timestamp),
-                                       fdate = factor(format(date, '%Y-%m-%d')))
-btc_gbp_day_temp <- btc_gbp_day_temp %>% group_by(fdate) %>% slice(c(n())) 
+# names(btc_eur) <- c("timestamp", "price", "volume")
+# btc_eur_day_temp <- btc_eur %>% mutate(date = anytime(timestamp),
+#                                        fdate = factor(format(date, '%Y-%m-%d')))
+# btc_eur_day_temp <- btc_eur_day_temp %>% group_by(fdate) %>% slice(c(n())) 
+# 
+# # ------ Create daily BTC / GBP data
+# names(btc_gbp) <- c("timestamp", "price", "volume")
+# btc_gbp_day_temp <- btc_gbp %>% mutate(date = anytime(timestamp),
+#                                        fdate = factor(format(date, '%Y-%m-%d')))
+# btc_gbp_day_temp <- btc_gbp_day_temp %>% group_by(fdate) %>% slice(c(n())) 
 ## -----------------------------------------------------------------------------------------
 # ------ Sentiment Daily
-S3 <- read.csv("twitter-sentiment/complete_tweets/complete_tweets_2018_trim.csv")
+S3 <- read.csv("twitter-sentiment/S3_2018.csv")
 names(S3) <- c("timestamp", "SA-1", "SA0", "SA1")
 
-
-S3_day_temp <- S3 %>% mutate(date = anytime(timestamp),
-                             fdate = factor(format(date, '%Y-%m-%d %H')))
-S3_day <- S3_day_temp %>% group_by(fdate) %>% slice(c(n()))
+S3 <- S3 %>% mutate(weight = SA_int*count/100)
+S3_mean <- S3 %>% group_by(rounded_hour) %>% summarise(mean(weight))
+# S3_day_temp <- S3 %>% mutate(date = anytime(timestamp),
+#                              fdate = factor(format(date, '%Y-%m-%d %H')))
+# S3_day <- S3_day_temp %>% group_by(fdate) %>% slice(c(n()))
 # write.csv(S3_day, "S3_day.csv")
 
 ## -----------------------------------------------------------------------------------------
 # ------ Inflation
-inflation <- read.csv("Data/inflation-10Ybreak.csv")
-head(inflation)
-inflation <- mutate(fdate = factor(format(DATE, '%Y-%m-%d')))
-
-
-## --- Now merge btc_usd and Sentiment + other variables
-
-
-# And merge by date (this keeps only dates in fdate that are the same)
-temp <- merge(btc_day, S3_day, by = c("fdate"))
-# and keep only columns of interest
-keep <- c("fdate", "price", "SA-1", "SA0", "SA1")
-df_day <- temp %>% select(keep)
-write.csv(df_day, "btc_S3_day.csv")
+# inflation <- read.csv("Data/inflation-10Ybreak.csv")
+# head(inflation)
+# inflation <- mutate(fdate = factor(format(DATE, '%Y-%m-%d')))
+# 
+# 
+# ## --- Now merge btc_usd and Sentiment + other variables
+# 
+# 
+# # And merge by date (this keeps only dates in fdate that are the same)
+# temp <- merge(btc_day, S3_day, by = c("fdate"))
+# # and keep only columns of interest
+# keep <- c("fdate", "price", "SA-1", "SA0", "SA1")
+# df_day <- temp %>% select(keep)
+# write.csv(df_day, "btc_S3_day.csv")
 
 ## -----------------------------------------------------------------------------------------
 # ------ Merge all variables together
 
-"""
+df  <- as.data.frame(cbind(btc_usd_day, S3_mean))
+df <- merge(btc_usd_day, S3_mean, by.x = "fdate", by.y = "rounded_hour")
+df <- df %>% rename("S3_mean" = "mean(weight)")
+df <- df %>% mutate(log_p = log(price), 
+                    log_p_lag = log(lagit4me(price,1)), 
+                    percent_change = log_p - log_p_lag)
+is.na(df)<-sapply(df, is.infinite)
+
+##
+## -----------------------------------------------------------------------------------------
+# ------ Plot
+df$fdate2 <- as.Date(df$fdate)
+plot1 <- ggplot(df, aes(x = fdate2)) +
+  geom_line(aes(y = percent_change), colour = "skyblue") + 
+  geom_line(aes(y = S3_mean), colour = "palegreen1")
+plot1
+
 ## -----------------------------------------------------------------------------------------
 ##### ---- Archives ---- #####
 ## ------ Get prices at 3 hr intervals
 # lets start with simply average price per hour
 # subset to a manageable dataframe size
-df_sub <- df %>% filter(timestamp >= 1539316790)
-head(df_sub, 10)
-df_sub <- df_sub %>% mutate(fdate = factor(format(date,'%Y-%m-%d')),
-                            fhr = factor(format(date,'%H')))
-df_sub
-df_sub <- df_sub %>% group_by(fdate) %>% mutate(avg_p = mean(price))
+# df_sub <- df %>% filter(timestamp >= 1539316790)
+# head(df_sub, 10)
+# df_sub <- df_sub %>% mutate(fdate = factor(format(date,'%Y-%m-%d')),
+#                             fhr = factor(format(date,'%H')))
+# df_sub
+# df_sub <- df_sub %>% group_by(fdate) %>% mutate(avg_p = mean(price))
 
 # do for large df later
 # btc_usd <- btc_usd %>% mutate(date = anytime(timestamp))
@@ -126,18 +145,26 @@ df_sub <- df_sub %>% group_by(fdate) %>% mutate(avg_p = mean(price))
 # Means <- ddply(df, .(hosts, three_hour), getmeans)
 # df_3hr <- df %>% mutate(interval = ifelse(grepl(04, fdate), "group 4", "not")
 
-temp <- df_sub
-#temp <- temp %>% mutate(interval = ifelse(grepl("*00", fdate), 0,
-#                                   ifelse(grepl("*07", fdate), 7, NA)))
-temp <- temp %>% mutate(interval = ifelse(fhr == "00", "g0",
-                                   ifelse(fhr == "03", "g3",
-                                   ifelse(fhr == "06", "g6",
-                                   ifelse(fhr == "09", "g9",
-                                   ifelse(fhr == "12", "g12",
-                                   ifelse(fhr == "15", "g15",
-                                   ifelse(fhr == "18", "g18",
-                                   ifelse(fhr == "21", "21", "first_group")))))))))
-# fill in NA's with group above
-temp$interval <- na.locf(temp$interval)
-head(temp)
+# temp <- df_sub
+# #temp <- temp %>% mutate(interval = ifelse(grepl("*00", fdate), 0,
+# #                                   ifelse(grepl("*07", fdate), 7, NA)))
+# temp <- temp %>% mutate(interval = ifelse(fhr == "00", "g0",
+#                                    ifelse(fhr == "03", "g3",
+#                                    ifelse(fhr == "06", "g6",
+#                                    ifelse(fhr == "09", "g9",
+#                                    ifelse(fhr == "12", "g12",
+#                                    ifelse(fhr == "15", "g15",
+#                                    ifelse(fhr == "18", "g18",
+#                                    ifelse(fhr == "21", "21", "first_group")))))))))
+# # fill in NA's with group above
+# temp$interval <- na.locf(temp$interval)
+# head(temp)
 """
+Functions:
+"""
+
+lagit4me = function(serie,lag){
+  n = length(serie);
+  pad = rep(0,lag);
+  return(c(pad,serie)[1:n]);
+}
