@@ -1,6 +1,6 @@
 # git ignore following files
 
-.DS_Store
+**/.DS_Store
 .twitter_keys.yaml
 pyqt/
 **/.ipynb_checkpoints/
