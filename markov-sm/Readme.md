@@ -19,12 +19,12 @@ Following, "Forecasting cryptocurrencies under model and parameter instability" 
       * Log high - log low of each Cryptocurrency, 
       * lags of each
   3) Additional financial and macro time series
-      * Europe credit default swap index 5 years
-      * Stoxx Europe 600 - Price Index
-      * :ballot_box_with_check: Gold Bullion LBM (GOLDAMGBD228NLBM)
-      * :ballot_box_with_check: Nikkei 225 Stock Average - Price Index (NIKKEI225)
-      * :ballot_box_with_check: S&P 500 Composite - Price Index (SP500)
-      * :ballot_box_with_check:ish - Silver Handy & Harman Base Price (same as Silver Fixing Price 12:00 noon (London time) in London Bullion Market, based in U.S. Dollars (SLVPRUSD)?)
-      * :ballot_box_with_check: 1-Month US Treasury Constant Maturity Rate (DGS1)
-      * :ballot_box_with_check: 10-Year US Treasury Constant Maturity Rate (DGS10)
-      * :ballot_box_with_check: VIX closing price (OVXCLS)
+      * Europe credit default swap index 5 years (can't find, so omit)
+      * :ballot_box_with_check: Stoxx Europe 600 - Price Index ([Investopedia](https://www.investing.com/indices/stoxx-600-historical-data))
+      * :ballot_box_with_check: Gold Bullion LBM ([GOLDAMGBD228NLBM](https://fred.stlouisfed.org/series/GOLDAMGBD228NLBM))
+      * :ballot_box_with_check: Nikkei 225 Stock Average - Price Index ([NIKKEI225](https://fred.stlouisfed.org/series/NIKKEI225)
+      * :ballot_box_with_check: S&P 500 Composite - Price Index ([SP500](https://fred.stlouisfed.org/series/SP500))
+      * - Silver Handy & Harman Base Price (check bloomberg later)
+      * :ballot_box_with_check: 1-Month US Treasury Constant Maturity Rate ([DGS1](https://fred.stlouisfed.org/series/DGS1))
+      * :ballot_box_with_check: 10-Year US Treasury Constant Maturity Rate ([DGS10](https://fred.stlouisfed.org/series/DGS10))
+      * :ballot_box_with_check: VIX closing price ([VIXCLS](https://fred.stlouisfed.org/series/VIXCLS))
