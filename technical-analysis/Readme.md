@@ -28,3 +28,10 @@ Following, "Forecasting cryptocurrencies under model and parameter instability" 
       * :ballot_box_with_check: 1-Month US Treasury Constant Maturity Rate ([DGS1](https://fred.stlouisfed.org/series/DGS1))
       * :ballot_box_with_check: 10-Year US Treasury Constant Maturity Rate ([DGS10](https://fred.stlouisfed.org/series/DGS10))
       * :ballot_box_with_check: VIX closing price ([VIXCLS](https://fred.stlouisfed.org/series/VIXCLS))
+
+Other crypto Data
+
+  * Ethereum downloaded from: ([Yahoo](https://finance.yahoo.com/quote/ETH-USD/history?period1=1438833600&period2=1546232400&interval=1d&filter=history&frequency=1d))
+  * Litecoin downloaded from: ([Yahoo](https://finance.yahoo.com/quote/LTC-USD/history?period1=1438833600&period2=1546232400&interval=1d&filter=history&frequency=1d))
+  * Ripple downloaded from ([Yahoo](https://finance.yahoo.com/quote/XRP-USD/history?period1=1438833600&period2=1546232400&interval=1d&filter=history&frequency=1d))
+  * Ripple downloaded from: 
