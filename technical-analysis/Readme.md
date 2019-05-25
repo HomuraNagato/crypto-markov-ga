@@ -34,4 +34,3 @@ Other crypto Data
   * Ethereum downloaded from: ([Yahoo](https://finance.yahoo.com/quote/ETH-USD/history?period1=1438833600&period2=1546232400&interval=1d&filter=history&frequency=1d))
   * Litecoin downloaded from: ([Yahoo](https://finance.yahoo.com/quote/LTC-USD/history?period1=1438833600&period2=1546232400&interval=1d&filter=history&frequency=1d))
   * Ripple downloaded from ([Yahoo](https://finance.yahoo.com/quote/XRP-USD/history?period1=1438833600&period2=1546232400&interval=1d&filter=history&frequency=1d))
-  * Ripple downloaded from: 
