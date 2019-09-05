@@ -6,10 +6,16 @@ And for the BTC / JPY exchange rate we use CoinCheckJPY, from Halloween 2014 - D
 
 Following [Investopedia](https://www.investopedia.com/trading/factors-influence-exchange-rates/) we want to include the following 6 variables, that are thought to move the currencies that we use today.  It will be interesting to see if these have any predictive power for cryptocurrencies. 
 
-Exchange Rate Data: from FRED St. Luis Fed
+# Exchange Rate Data: from FRED St. Luis Fed
   1) Differentials in Intererst Rates: 3-Month London Interbank Offered Rate (LIBOR), based on a basket of currencies:
       * :ballot_box_with_check: Japanese Yen (JPY3MTD156N), US Dollar (USD3MTD156N), Euro (EUR3MTD156N), and British Pound (GBP3MTD156N)
       * :ballot_box_with_check: To create differential, we take the mean across these four item, then difference each respective rate against this mean
+
+# IRP and UIRP models
+Collect interest rates on these currencies to model these popular exchange rates
+use for comparison: the top currencies to buy BTC, from [Coinhills](https://www.coinhills.com/market/currency/)
+at time of writing: USD 70.39%, JPY 20.03%, KRW 6.07%, EUR 1.39%, GBP 0.88%, and CNY .01% (included as back in 2014, 2015 it was in the first position [Investopedia](https://www.investopedia.com/tech/top-fiat-currencies-used-trade-bitcoin/))
+Then take the average of these as the foreign interest rate, and USA as the base
 
 Following, "Forecasting cryptocurrencies under model and parameter instability" by Cataniaa, Grassib, and Ravazzolo use:
 
