@@ -17,6 +17,14 @@ use for comparison: the top currencies to buy BTC, from [Coinhills](https://www.
 at time of writing: USD 70.39%, JPY 20.03%, KRW 6.07%, EUR 1.39%, GBP 0.88%, and CNY .01% (included as back in 2014, 2015 it was in the first position [Investopedia](https://www.investopedia.com/tech/top-fiat-currencies-used-trade-bitcoin/))
 Then take the average of these as the foreign interest rate, and USA as the base
 
+10 Year Bond data: 
+  * USA: IRLTLT01USM156N
+  * JPY: IRLTLT01JPM156N
+  * KRW: IRLTLT01KRM156N
+  * EUR: IRLTLT01EZM156N
+  * GBP: IRLTLT01GBQ156N
+  * CNY: http://www.pbc.gov.cn/diaochatongjisi/116219/116319/3750274/3750288/index.html
+
 Following, "Forecasting cryptocurrencies under model and parameter instability" by Cataniaa, Grassib, and Ravazzolo use:
 
   2) Cryptocurrency time series - in first difference of logs
