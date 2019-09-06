@@ -25,6 +25,9 @@ Then take the average of these as the foreign interest rate, and USA as the base
   * GBP: IRLTLT01GBQ156N
   * CNY: http://www.pbc.gov.cn/diaochatongjisi/116219/116319/3750274/3750288/index.html
 
+# PPP model
+Data obtained from: [OECD](https://data.oecd.org/conversion/purchasing-power-parities-ppp.htm)
+
 Following, "Forecasting cryptocurrencies under model and parameter instability" by Cataniaa, Grassib, and Ravazzolo use:
 
   2) Cryptocurrency time series - in first difference of logs
